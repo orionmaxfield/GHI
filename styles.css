@@ -151,8 +151,8 @@ ol.steps strong { display: block; font-size: 1.08rem; }
 }
 .plain p { margin-bottom: 0.8em; }
 
-/* Divider braid */
-.divider { display: block; margin: 0 auto; padding: 0.4rem 0; }
+/* Divider braid (sits inside the prose column, not centered in the page) */
+.divider { display: block; margin: 0.4rem 0 1.2rem; }
 
 /* FAQ */
 details {
@@ -165,11 +165,20 @@ summary {
   cursor: pointer;
   font-family: "Newsreader", Georgia, serif;
   font-size: 1.18rem;
-  padding: 0.7rem 0;
-  list-style-position: outside;
+  padding: 0.7rem 0 0.7rem 1.5rem;
+  position: relative;
+  list-style: none;
 }
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: "\25B8";
+  position: absolute; left: 0; top: 0.7rem;
+  color: var(--honey);
+}
+details[open] summary::before { content: "\25BE"; }
 summary:hover { color: var(--pine); }
 details[open] summary { color: var(--pine); }
+details p, details ul { margin-left: 1.5rem; }
 details p, details ul { padding-right: 0.5rem; }
 
 /* Footer */
