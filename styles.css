@@ -1,0 +1,195 @@
+/* Gender Harmony Institute — shared styles */
+
+:root {
+  --paper: #F5F7F2;
+  --ink: #243430;
+  --pine: #2F5D4E;
+  --pine-deep: #23453A;
+  --moss: #E3EBE1;
+  --honey: #B9863B;
+  --dusk: #74919F;
+  --rule: #C9D4C7;
+  --max: 1060px;
+  --prose: 66ch;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Karla", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6em;
+}
+h1 { font-size: clamp(2.3rem, 5.5vw, 3.5rem); }
+h2 { font-size: clamp(1.6rem, 3.4vw, 2.15rem); margin-top: 0; }
+h3 { font-size: 1.25rem; }
+
+p { margin: 0 0 1em; max-width: var(--prose); }
+ul, ol { max-width: var(--prose); padding-left: 1.3em; }
+li { margin-bottom: 0.5em; }
+
+a { color: var(--pine); text-underline-offset: 3px; }
+a:hover { color: var(--pine-deep); }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--honey);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  padding: 1.1rem 0 1rem;
+  background: var(--paper);
+}
+.site-header .wrap {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.9rem 1.6rem;
+}
+.wordmark {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.35rem; font-weight: 500;
+  color: var(--ink); text-decoration: none;
+  margin-right: auto; white-space: nowrap;
+}
+.wordmark span { color: var(--pine); }
+nav.primary { display: flex; flex-wrap: wrap; gap: 0.2rem 1.05rem; font-size: 0.95rem; }
+nav.primary a { text-decoration: none; color: var(--ink); padding: 0.15rem 0; }
+nav.primary a:hover { color: var(--pine); }
+nav.primary a[aria-current="page"] {
+  color: var(--pine);
+  border-bottom: 2px solid var(--honey);
+}
+.nav-cta {
+  font-size: 0.95rem;
+  background: var(--pine); color: var(--paper) !important;
+  text-decoration: none; padding: 0.45rem 0.95rem; border-radius: 6px;
+}
+.nav-cta:hover { background: var(--pine-deep); }
+
+/* Hero */
+.hero { padding: 4.2rem 0 3.2rem; }
+.hero p.lede { font-size: 1.18rem; max-width: 58ch; }
+.hero .braid { margin: 2.2rem 0 0; max-width: 560px; display: block; }
+
+/* Sections */
+section { padding: 3rem 0; }
+section.band { background: var(--moss); }
+section.deep { background: var(--pine-deep); color: var(--paper); }
+section.deep h2 { color: var(--paper); }
+section.deep a { color: #DCEBD9; }
+.rule-top { border-top: 1px solid var(--rule); }
+
+/* Quiet list of audiences (not cards) */
+.paths { list-style: none; padding: 0; max-width: var(--prose); margin: 0; }
+.paths li {
+  border-top: 1px solid var(--rule);
+  padding: 1.05rem 0;
+  margin: 0;
+}
+.paths li:last-child { border-bottom: 1px solid var(--rule); }
+.paths a { font-family: "Newsreader", Georgia, serif; font-size: 1.25rem; text-decoration: none; }
+.paths p { margin: 0.25rem 0 0; font-size: 0.98rem; }
+
+/* Steps (a real sequence) */
+ol.steps { counter-reset: step; list-style: none; padding: 0; max-width: var(--prose); }
+ol.steps li {
+  counter-increment: step;
+  padding: 1rem 0 1rem 3.1rem;
+  position: relative;
+  border-top: 1px solid var(--rule);
+}
+ol.steps li:last-child { border-bottom: 1px solid var(--rule); }
+ol.steps li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: 1.05rem;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.5rem; color: var(--honey);
+  width: 2.2rem; text-align: left;
+}
+ol.steps strong { display: block; font-size: 1.08rem; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--pine); color: var(--paper);
+  text-decoration: none;
+  padding: 0.7rem 1.35rem; border-radius: 6px;
+  font-size: 1.02rem;
+}
+.btn:hover { background: var(--pine-deep); color: var(--paper); }
+.btn.ghost {
+  background: transparent; color: var(--pine);
+  border: 1.5px solid var(--pine);
+}
+.btn.ghost:hover { background: var(--moss); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
+
+/* Honest-notes block */
+.plain {
+  border-left: 3px solid var(--honey);
+  padding: 0.2rem 0 0.2rem 1.2rem;
+  max-width: var(--prose);
+}
+.plain p { margin-bottom: 0.8em; }
+
+/* Divider braid */
+.divider { display: block; margin: 0 auto; padding: 0.4rem 0; }
+
+/* FAQ */
+details {
+  border-top: 1px solid var(--rule);
+  max-width: var(--prose);
+  padding: 0.35rem 0;
+}
+details:last-of-type { border-bottom: 1px solid var(--rule); }
+summary {
+  cursor: pointer;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.18rem;
+  padding: 0.7rem 0;
+  list-style-position: outside;
+}
+summary:hover { color: var(--pine); }
+details[open] summary { color: var(--pine); }
+details p, details ul { padding-right: 0.5rem; }
+
+/* Footer */
+footer {
+  background: var(--ink); color: #DDE6DC;
+  padding: 2.6rem 0 2.2rem; margin-top: 3rem;
+  font-size: 0.95rem;
+}
+footer a { color: #DCEBD9; }
+footer .cols { display: flex; flex-wrap: wrap; gap: 2rem 4rem; }
+footer .crisis {
+  border-left: 3px solid var(--honey);
+  padding-left: 1rem; max-width: 46ch;
+}
+footer nav { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; }
+footer nav a { text-decoration: none; }
+footer nav a:hover { text-decoration: underline; }
+footer .fine { margin-top: 1.8rem; color: #A8B8A6; font-size: 0.85rem; }
+
+@media (max-width: 640px) {
+  .hero { padding: 2.8rem 0 2.2rem; }
+  section { padding: 2.2rem 0; }
+}
