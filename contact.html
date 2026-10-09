@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — Gender Harmony Institute</title>
-<meta name="description" content="Email us to start. A free fifteen-minute conversation with our intake coordinator is the first step for every family.">
+<meta name="description" content="Send us a message or email us to start. A free fifteen-minute conversation with our intake coordinator is the first step for every family.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -31,34 +31,61 @@
 
 <section class="hero">
   <div class="wrap">
-    <h1>One email starts it.</h1>
-    <p class="lede">Write to <a href="mailto:info@genderharmony.institute">info@genderharmony.institute</a> in your own words. There&rsquo;s no form to get right and no wrong way to begin &mdash; &ldquo;I don&rsquo;t know where to start&rdquo; is a perfectly good first line.</p>
-    <div class="btn-row">
-      <a class="btn" href="mailto:info@genderharmony.institute">Email info@genderharmony.institute</a>
-    </div>
+    <h1>Reach out. We&rsquo;ll take it from there.</h1>
+    <p class="lede">Send us a note below, or email <a href="mailto:info@genderharmony.institute">info@genderharmony.institute</a> directly. There&rsquo;s no wrong way to begin &mdash; &ldquo;I don&rsquo;t know where to start&rdquo; is a perfectly good first line.</p>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
-    <h2>If it helps, include:</h2>
-    <ul>
-      <li>Who the support is for (yourself, your child, a friend) and roughly their age</li>
-      <li>Your state &mdash; therapy licensing works state by state</li>
-      <li>Anything about your values or situation you want a therapist to understand</li>
-      <li>How urgent things feel right now</li>
-    </ul>
-    <p>We&rsquo;ll reply to set up a free fifteen-minute conversation with our intake coordinator &mdash; a chance to talk through your situation and what options exist, before any commitments.</p>
-    <p>If you&rsquo;d rather talk than write, say so in your email and we&rsquo;ll schedule a call.</p>
+    <h2>Send us a message</h2>
+    <form class="contact-form" action="https://formsubmit.co/info@genderharmony.institute" method="POST">
+      <input type="hidden" name="_subject" value="New inquiry from the GHI website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" id="next-url" value="https://genderharmony.institute/thanks.html">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <label for="name">Your name</label>
+      <input id="name" name="name" type="text" autocomplete="name" required>
+
+      <label for="email">Your email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+
+      <label for="for-whom">Who is the support for?</label>
+      <select id="for-whom" name="support_for">
+        <option value="">Choose one (optional)</option>
+        <option>Myself</option>
+        <option>My child</option>
+        <option>Another family member or friend</option>
+        <option>I&rsquo;m a therapist</option>
+        <option>Something else</option>
+      </select>
+
+      <label for="state">Your state <span class="hint">(therapy licensing works state by state)</span></label>
+      <input id="state" name="state" type="text" autocomplete="address-level1">
+
+      <label for="message">What&rsquo;s going on? <span class="hint">(share only what you&rsquo;re comfortable with)</span></label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button class="btn" type="submit">Send message</button>
+      <p class="hint">By sending, you agree to our <a href="privacy.html">Privacy Policy</a>. Please don&rsquo;t include medical records or detailed health history.</p>
+    </form>
   </div>
 </section>
 
 <section>
   <div class="wrap">
+    <h2>What happens next</h2>
+    <p>We&rsquo;ll reply by email to set up a free fifteen-minute conversation with our intake coordinator &mdash; a chance to talk through your situation and what options exist, before any commitments.</p>
     <h2>A note on urgency</h2>
-    <p>We answer email as fast as one small organization can, but we are not a crisis line. If you or someone you love is in immediate danger, call or text <a href="tel:988">988</a> in the US, or your local emergency number, right now.</p>
+    <p>We answer messages as fast as one small organization can, but we are not a crisis line. If you or someone you love is in immediate danger, call or text <a href="tel:988">988</a> in the US, or your local emergency number, right now.</p>
   </div>
 </section>
+
+<script>
+  // Send people back to this same site after submitting (works on preview links too)
+  document.getElementById('next-url').value = location.origin + '/thanks.html';
+</script>
 
 </main>
 <footer>

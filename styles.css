@@ -193,3 +193,18 @@ footer .fine { margin-top: 1.8rem; color: #A8B8A6; font-size: 0.85rem; }
   .hero { padding: 2.8rem 0 2.2rem; }
   section { padding: 2.2rem 0; }
 }
+
+/* Contact form */
+.contact-form { max-width: 34rem; display: grid; gap: 0.35rem; }
+.contact-form label { font-weight: 600; margin-top: 0.8rem; }
+.contact-form .hint, p.hint { font-weight: 400; font-size: 0.9rem; color: #4E5F5A; }
+.contact-form input, .contact-form select, .contact-form textarea {
+  font: inherit; color: var(--ink); background: #fff;
+  border: 1px solid var(--rule); border-radius: 6px;
+  padding: 0.6rem 0.75rem; width: 100%;
+}
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+  outline: 3px solid var(--honey); outline-offset: 1px; border-color: var(--pine);
+}
+.contact-form button { justify-self: start; margin-top: 1.2rem; border: 0; cursor: pointer; font: inherit; }
+.contact-form .hp { position: absolute; left: -9999px; }
